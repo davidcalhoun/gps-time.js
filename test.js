@@ -3,7 +3,7 @@ var gpsTime = require(__dirname + '/gps-time.js');
 
 var expect = chai.expect;
 
-describe('gps-to-unix.js', function() {
+describe('gps-time.js', function() {
   it('returns an interface', function() {
     expect(gpsTime).to.be.a('object');
   });
