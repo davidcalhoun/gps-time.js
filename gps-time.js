@@ -1,5 +1,5 @@
 /**
- * gps-time.js v1.0.0
+ * gps-time.js v1.0.1
  * https://github.com/davidcalhoun/gps-time.js
  *
  * Small utility to convert times between GPS epoch (midnight January 6, 1980) and
