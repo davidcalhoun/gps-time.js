@@ -1,4 +1,6 @@
 # gps-time.js 1.0.0
+[![Build Status](https://travis-ci.org/davidcalhoun/gps-time.js.svg?branch=master)](https://travis-ci.org/davidcalhoun/gps-time.js)
+
 Small utility to convert times between GPS epoch (midnight January 6, 1980) and Unix epoch (midnight January 1, 1970), taking into account leap seconds.
 
 Works on the client and on the server (in Node.js).
