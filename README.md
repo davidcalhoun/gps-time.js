@@ -38,3 +38,6 @@ This comes with a small test suite which can be run like this:
 $ npm install --dev
 $ npm test
 ```
+
+# License
+[Licenced under MIT](https://github.com/davidcalhoun/gps-time.js/blob/master/LICENSE)

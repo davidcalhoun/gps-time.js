@@ -1,3 +1,13 @@
+/**
+ * gps-time.js v1.0.0
+ * https://github.com/davidcalhoun/gps-time.js
+ *
+ * Small utility to convert times between GPS epoch (midnight January 6, 1980) and
+ * Unix epoch (midnight January 1, 1970), taking into account leap seconds.
+ * 
+ * Licensed under MIT (https://github.com/davidcalhoun/gps-time.js/blob/master/LICENSE)
+ */
+
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD
@@ -16,7 +26,8 @@
 var exports = {};
 
 
-// List of GPS leaps in milliseconds.
+// List of GPS leaps in milliseconds.  This will need to stay updated as new leap seconds are announced in
+// the future.
 var gpsLeapMS = [
   46828800000, 78364801000, 109900802000, 173059203000, 252028804000, 315187205000, 346723206000,
   393984007000, 425520008000, 457056009000, 504489610000, 551750411000, 599184012000, 820108813000,
@@ -37,6 +48,7 @@ var msInSecond = 1000;
  * for unix->gps and gps->unix.
  * @param {number} gpsMS GPS time in milliseconds.
  * @param {number} curGPSLeapMS Currenly leap represented in milliseconds.
+ * @param {number} totalLeapsMS Total accumulated leaps in milliseconds.
  * @param {boolean} isUnixToGPS True if this operation is for unix->gps, falsy if gps->unix.
  * @return {boolean} Whether a leap second should be added.
  */
@@ -73,7 +85,7 @@ var countLeaps = function(gpsMS, isUnixToGPS) {
 /**
  * Determines whether the GPS in milliseconds is a leap second.
  * @param {number} gpsMS
- * @param {boolean}
+ * @return {boolean}
  */
 var isLeap = function(gpsMS) {
   return gpsLeapMS.indexOf(gpsMS) !== -1;
@@ -86,9 +98,13 @@ var isLeap = function(gpsMS) {
  * @return {number} Unix milliseconds (1970 epoch).
  */
 exports.toUnixMS = function(gpsMS) {
+  // Epoch diff adjustment.
   var unixMS = gpsMS + gpsUnixEpochDiffMS;
+
+  // Account for leap seconds between 1980 epoch and gpsMS.
   unixMS -= (countLeaps(gpsMS) * msInSecond);
 
+  // If the passed in time falls exactly on a leap second, we have to tweak it.
   if(isLeap(gpsMS)) {
     unixMS += msInSecond / 2;
   }
@@ -109,10 +125,13 @@ exports.toGPSMS = function(unixMS) {
     unixMS -= msInSecond / 2;
   }
 
+  // Epoch diff adjustment.
   var gpsMS = unixMS - gpsUnixEpochDiffMS;
 
+  // Account for leap seconds between 1980 epoch and gpsMS.
   gpsMS += (countLeaps(gpsMS, true) * msInSecond);
 
+  // If the passed in time falls exactly on a leap second, we have to tweak it.
   if(isLeap) {
     gpsMS += msInSecond;
   }
