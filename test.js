@@ -8,7 +8,7 @@ describe('gps-to-unix.js', function() {
     expect(gpsTime).to.be.a('object');
   });
 
-	describe('toUnixMS', function() {
+  describe('toUnixMS', function() {
     it('works with a random date in 2016', function() {
       var gpsMS = 1138203697000;
       var unixMS = 1454168480000;
@@ -61,7 +61,7 @@ describe('gps-to-unix.js', function() {
         expect(gpsTime.toUnixMS(gpsMS)).to.equal(unixMS);
       });
     });
-	});
+  });
 
 
   describe('toGPSMS', function() {
