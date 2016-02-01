@@ -104,7 +104,7 @@ exports.toUnixMS = function(gpsMS) {
   // Account for leap seconds between 1980 epoch and gpsMS.
   unixMS -= (countLeaps(gpsMS) * msInSecond);
 
-  // If the passed in time falls exactly on a leap second, we have to tweak it.
+  // If the passed in time falls exactly on a leap second, add a half second to distinguish it as a leap second.
   if(isLeap(gpsMS)) {
     unixMS += msInSecond / 2;
   }
