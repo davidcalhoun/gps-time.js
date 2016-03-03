@@ -7,6 +7,10 @@ No dependencies!  Very small: 464 bytes gzipped.
 
 Works on the client and on the server (in Node.js).
 
+# Node.js installation
+```javascript
+npm install gps-time
+```
 
 # Usage
 AMD and CommonJS are supported, with a fallback that defines this utility at window.gpsTime
