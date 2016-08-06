@@ -1,6 +1,6 @@
 {
   "name": "gps-time",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Small utility to convert times between GPS epoch (midnight January 6, 1980) and Unix epoch (midnight January 1, 1970), taking into account leap seconds.",
   "main": "gps-time.js",
   "scripts": {
@@ -24,9 +24,7 @@
     "url": "https://github.com/davidcalhoun/gps-time.js/issues"
   },
   "homepage": "https://github.com/davidcalhoun/gps-time.js",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "^3.0.0",
     "mocha": "^2.0.0"
