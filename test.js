@@ -16,6 +16,29 @@ describe('gps-time.js', function() {
       expect(gpsTime.toUnixMS(gpsMS)).to.equal(unixMS);
     });
 
+    describe('2016 leap second', function() {
+      it('works just before', function() {
+        var gpsMS = 1167264016000;
+        var unixMS = 1483228799000;
+
+        expect(gpsTime.toUnixMS(gpsMS)).to.equal(unixMS);
+      });
+
+      it('works during', function() {
+        var gpsMS = 1167264017000;
+        var unixMS = 1483228799500;
+
+        expect(gpsTime.toUnixMS(gpsMS)).to.equal(unixMS);
+      });
+
+      it('works just after', function() {
+        var gpsMS = 1167264018000;
+        var unixMS = 1483228800000;
+
+        expect(gpsTime.toUnixMS(gpsMS)).to.equal(unixMS);
+      });
+    });
+
     describe('2015 leap second', function() {
       it('works just before', function() {
         var gpsMS = 1119744015000;
