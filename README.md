@@ -48,5 +48,5 @@ $ npm test
 [Licenced under MIT](https://github.com/davidcalhoun/gps-time.js/blob/master/LICENSE)
 
 
-[downloads-image]: https://img.shields.io/npm/dm/gps-time.js.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/gps-time.js
+[downloads-image]: https://img.shields.io/npm/dm/gps-time.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/gps-time
