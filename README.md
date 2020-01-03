@@ -10,7 +10,7 @@ Works on the client and on the server (in Node.js).
 
 # Node.js installation
 ```javascript
-npm install gps-time
+npm i --save gps-time
 ```
 
 # Usage
