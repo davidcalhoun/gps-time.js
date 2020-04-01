@@ -27,8 +27,8 @@
   "homepage": "https://github.com/davidcalhoun/gps-time.js",
   "dependencies": {},
   "devDependencies": {
-    "chai": "^3.0.0",
-    "mocha": "^6.2.2",
-    "uglify-js": "^2.7.0"
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "uglify-js": "^3.8.1"
   }
 }
