@@ -9,7 +9,8 @@
     "push-publish": "git push && git push --tags && npm publish",
     "major": "npm version major && npm run push-publish",
     "minor": "npm version minor && npm run push-publish",
-    "patch": "npm version patch && npm run push-publish"
+    "patch": "npm version patch && npm run push-publish",
+    "bump": "! npm outdated && npm update && npm audit fix || echo 'Package up to date'"
   },
   "repository": {
     "type": "git",
