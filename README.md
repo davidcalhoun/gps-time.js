@@ -4,6 +4,8 @@
 
 Small utility to convert times between GPS epoch (midnight January 6, 1980) and Unix epoch (midnight January 1, 1970), taking into account leap seconds.
 
+It's not such a trivial matter as adding a constant number of leap seconds to all time inputs!  For any two times, a different number of leap seconds may have elapsed between them.  This utility helps figure out exactly how many have elapsed.
+
 No dependencies!  Very small: 464 bytes gzipped.
 
 Works on the client and on the server (in Node.js).
