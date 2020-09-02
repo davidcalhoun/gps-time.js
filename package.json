@@ -10,7 +10,7 @@
     "major": "npm version major && npm run push-publish",
     "minor": "npm version minor && npm run push-publish",
     "patch": "npm version patch && npm run push-publish",
-    "bump": "! npm outdated && npm update && npm audit fix || echo 'Package up to date'"
+    "bump": "! npm outdated && npm update && npm audit fix && npm test || echo 'Package up to date'"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.0.1",
-    "uglify-js": "^3.10.0"
+    "mocha": "^8.1.3",
+    "uglify-js": "^3.10.3"
   }
 }
