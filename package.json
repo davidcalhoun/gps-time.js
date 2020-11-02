@@ -34,6 +34,6 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^8.2.0",
-    "uglify-js": "^3.11.3"
+    "uglify-js": "^3.11.4"
   }
 }
