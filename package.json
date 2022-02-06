@@ -30,10 +30,9 @@
     "url": "https://github.com/davidcalhoun/gps-time.js/issues"
   },
   "homepage": "https://github.com/davidcalhoun/gps-time.js",
-  "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.2.1",
+    "mocha": "^9.2.0",
     "uglify-js": "^3.12.4"
   }
 }
