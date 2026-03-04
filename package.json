@@ -4,7 +4,7 @@
   "description": "Small utility to convert times between GPS epoch (midnight January 6, 1980) and Unix epoch (midnight January 1, 1970), taking into account leap seconds.",
   "main": "gps-time.js",
   "scripts": {
-    "test": "mocha test",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "minify": "./node_modules/uglify-js/bin/uglifyjs -nmf -o gps-time-min.js gps-time.js",
     "push-publish": "git push && git push --tags && npm publish",
     "major": "npm version major && npm run push-publish",
@@ -32,7 +32,7 @@
   "homepage": "https://github.com/davidcalhoun/gps-time.js",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^9.2.0",
+    "jest": "^30.2.0",
     "uglify-js": "^3.12.4"
   }
 }
